@@ -23,22 +23,7 @@ public class ProductController {
     public ResponseEntity<ResponseDto> get() {
         List<Product> products = productService.getAllProducts();
         log.info("Product list fetched successfully.");
-        log.info("Product list fetched successfully.");
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(products));
     }
-
-//    @PostMapping("/getAllTask")
-//    public ResponseEntity<ResponseDto> getAllTask() {
-//        UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        List<Product> list  = productService.getAllTask(userPrincipal.getUsername());
-//        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(list));
-//    }
-//
-//    @PostMapping("/update")
-//    public ResponseEntity<ResponseDto> update(@RequestBody ProductDto productDto) {
-//        UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        productService.updateTask(productDto,userPrincipal.getUsername());
-//        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto("Task updated successfully."));
-//    }
 
 }
